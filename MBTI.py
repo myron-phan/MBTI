@@ -66,3 +66,12 @@ df['J-P'] = df['type'].str[3]
 df['J-P'] = df['J-P'].map(map4)
 
 print(df.head(10))
+print(df.head())
+
+# exploratory data analysis
+
+plt.figure(figsize = (15,10))
+sns.violinplot(x = 'type', y = 'words_per_comment', data = df, inner = None, color = 'lightgray')
+sns.stripplot(x='type', y='words_per_comment', data=df, size=4, jitter=True)
+plt.ylabel("Words per comment")
+plt.show()
